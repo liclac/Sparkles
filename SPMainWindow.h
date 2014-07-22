@@ -13,7 +13,10 @@ class SPMainWindow : public QMainWindow
 
 public:
 	explicit SPMainWindow(QWidget *parent = 0);
-	~SPMainWindow();
+	virtual ~SPMainWindow();
+	
+public slots:
+	void postConstructorSetup();
 
 private:
 	Ui::SPMainWindow *ui;
