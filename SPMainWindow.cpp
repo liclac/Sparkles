@@ -22,6 +22,16 @@ SPMainWindow::~SPMainWindow()
 	delete ui;
 }
 
+void SPMainWindow::paintEvent(QPaintEvent *e)
+{
+	Q_UNUSED(e)
+	
+	//  If we set WA_NoSystemBackground, we have to manually clear the window.
+	QPainter painter(this);
+	painter.setCompositionMode(QPainter::CompositionMode_Clear);
+	painter.fillRect(0, 0, this->width(), this->height(), QColor(0,0,0));
+}
+
 void SPMainWindow::postConstructorSetup()
 {
 #ifdef Q_OS_WIN32

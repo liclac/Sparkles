@@ -16,6 +16,8 @@ public:
 	virtual ~SPMainWindow();
 	
 public slots:
+	void paintEvent(QPaintEvent *e);
+	
 	void postConstructorSetup();
 	void on_tabBar_currentChanged(int index);
 
