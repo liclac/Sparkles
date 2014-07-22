@@ -1,6 +1,7 @@
 #include "SPMainWindow.h"
 #include "ui_SPMainWindow.h"
 #include <QtWinExtras>
+#include <QDebug>
 
 SPMainWindow::SPMainWindow(QWidget *parent) :
 	QMainWindow(parent),
@@ -28,4 +29,9 @@ void SPMainWindow::postConstructorSetup()
 	QtWin::extendFrameIntoClientArea(this, -1, -1, -1, -1);
 	this->setAttribute(Qt::WA_NoSystemBackground);
 #endif
+}
+
+void SPMainWindow::on_tabBar_currentChanged(int index)
+{
+	qDebug() << "New Tab:" << index;
 }

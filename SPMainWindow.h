@@ -17,6 +17,7 @@ public:
 	
 public slots:
 	void postConstructorSetup();
+	void on_tabBar_currentChanged(int index);
 
 private:
 	Ui::SPMainWindow *ui;
